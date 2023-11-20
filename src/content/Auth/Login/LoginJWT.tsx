@@ -44,39 +44,22 @@ export const LoginJWT: FC = (props) => {
         [true],
         t('You must agree to our terms and conditions')
       )
+      
     }),
     onSubmit: async (values, helpers): Promise<void> => {
       try {
-        //modificado
-        /*
-        axios.post("https://reqres.in/api/login", {
-          email: values.email,
-          password: values.password
-        })
-        .then((response) => {
-          console.log(response);
-        });*/
-        
-        /*axios.post("http://localhost:8080/users", {  // Substitua "http://localhost:3000" pelo URL do seu servidor JSON
-          email: values.email,
-          password: values.password
-        })*/
 
-  
         await login(values.email, values.password);
-
-
         
-        
-
         if (isMountedRef()) {
           const backTo =
             (router.query.backTo as string) || '/dashboards/reports';
           router.push(backTo);
         }
       } catch (err) {
-        console.error(err);
+       
         if (isMountedRef()) {
+          
           helpers.setStatus({ success: false });
           helpers.setErrors({ submit: err.message });
           helpers.setSubmitting(false);
@@ -148,6 +131,9 @@ export const LoginJWT: FC = (props) => {
         <FormHelperText error>{formik.errors.terms}</FormHelperText>
       )}
 
+      {formik.errors.submit && (
+        <FormHelperText error>{formik.errors.submit}</FormHelperText>
+      )}
       <Button
         sx={{
           mt: 3

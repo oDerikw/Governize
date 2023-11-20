@@ -1,6 +1,5 @@
-import type { User } from 'src/models/user';
 import { randomId } from 'src/utils/randomId';
-import { sign, decode, JWT_SECRET, JWT_EXPIRES_IN } from '../utils/jwt';
+import { sign, JWT_SECRET, JWT_EXPIRES_IN } from '../utils/jwt';
 import { wait } from 'src/utils/wait';
 import axios from 'axios'; 
 const users = [
@@ -35,14 +34,18 @@ class AuthApi {
         console.log(response.data);
 
         const accessToken = response.data.access_token;
-        console.log(accessToken);
+       // console.log(accessToken);
 
         resolve(accessToken);
-        console.log("abcccc");
+        
       } catch (err) {
-        console.log("Internal server error!!!")
-        console.error(err);
-        reject(new Error('Internal server error'));
+        
+        if (err.response && err.response.status === 401) {
+          reject(new Error('Invalid email or password' ));
+        } else {
+          
+          reject(new Error('Internal server error!'));
+        }
       }
     });
   }
@@ -93,7 +96,7 @@ class AuthApi {
     return new Promise((resolve, reject) => {
       try {
         //const { userId } = decode(accessToken) as any;
-        const apiUrl = `https://api.escuelajs.co/api/v1/auth/profile`; // Substitua pela sua URL real
+        const apiUrl = `https://api.escuelajs.co/api/v1/auth/profile`; 
   
         axios.get(apiUrl, {
           headers: {
@@ -114,6 +117,7 @@ class AuthApi {
       }
     });
   }
+  
 }
 
 export const authApi = new AuthApi();
