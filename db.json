@@ -1,0 +1,74 @@
+{
+  "usersDB": [
+    {
+      "id": 1,
+      "avatar": "/static/images/avatars/3.jpg",
+      "location": "San Francisco, USA",
+      "username": "admin",
+      "email": "demo1@example.com",
+      "name": "Rachael Simons",
+      "jobtitle": "Lead Developer",
+      "password": "TokyoPass1@",
+      "role": "admin",
+      "posts": 27,
+      "coverImg": "/static/images/placeholders/covers/5.jpg",
+      "followers": 6513,
+      "description": "Curabitur at ipsum ac tellus semper interdum."
+    },
+    {
+      "id": 2,
+      "avatar": "/static/images/avatars/2.jpg",
+      "location": "San Francisco, USA",
+      "username": "admin2",
+      "email": "demo2@example.com",
+      "name": "Andre Simpsons",
+      "jobtitle": "Employ",
+      "password": "TokyoPass1@",
+      "role": "admin",
+      "posts": 28,
+      "coverImg": "/static/images/placeholders/covers/5.jpg",
+      "followers": 6513,
+      "description": "Curabitur at ipsum ac tellus semper interdum."
+    },
+    {
+      "id": 3,
+      "avatar": "/static/images/avatars/2.jpg",
+      "location": "San Francisco, USA",
+      "username": "admin2",
+      "email": "eve.holt@reqres.in",
+      "name": "Pedro Sampaio",
+      "jobtitle": "Employ",
+      "password": "cityslicka",
+      "role": "admin",
+      "posts": 88,
+      "coverImg": "/static/images/placeholders/covers/5.jpg",
+      "followers": 6213,
+      "description": "Curabitur at ipsum ac tellus semper interdum."
+    },
+    {
+      "email": "demo1@example.com",
+      "password": "TokyoPass1@",
+      "id": 4
+    },
+    {
+      "email": "demo1@example.com",
+      "password": "TokyoPass1@",
+      "id": 5
+    },
+    {
+      "email": "demo1@example.com",
+      "password": "TokyoPass1@",
+      "id": 6
+    },
+    {
+      "email": "demo2@example.com",
+      "password": "TokyoPass1@",
+      "id": 7
+    },
+    {
+      "email": "demo1@example.com",
+      "password": "TokyoPass1@",
+      "id": 8
+    }
+  ]
+}
