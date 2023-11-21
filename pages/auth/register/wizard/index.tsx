@@ -384,7 +384,7 @@ export function FormikStepper({
                 type="button"
                 onClick={() => setStep((s) => s - 1)}
               >
-                {t('Previous')}
+                {t('Anterior')}
               </Button>
 
               <Button
@@ -397,10 +397,10 @@ export function FormikStepper({
                 type="submit"
               >
                 {isSubmitting
-                  ? t('Submitting')
+                  ? t('Enviando')
                   : isLastStep()
-                  ? t('Complete registration')
-                  : t('Next step')}
+                  ? t('Cadastro Realizado')
+                  : t('Próximo')}
               </Button>
             </BoxActions>
           ) : null}
