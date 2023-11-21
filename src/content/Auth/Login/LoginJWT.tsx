@@ -34,15 +34,15 @@ export const LoginJWT: FC = (props) => {
     },
     validationSchema: Yup.object({
       email: Yup.string()
-        .email(t('The email provided should be a valid email address'))
+        .email(t('O endereço de e-mail deve ser um e-mail válido'))
         .max(255)
-        .required(t('The email field is required')),
+        .required(t('O espaço de e-mail é obrigatório')),
       password: Yup.string()
         .max(255)
-        .required(t('The password field is required')),
+        .required(t('O espaço de senha é obrigatório')),
       terms: Yup.boolean().oneOf(
         [true],
-        t('You must agree to our terms and conditions')
+        t('Você deve concondar com os termos de uso do sistema')
       )
       
     }),
@@ -76,7 +76,7 @@ export const LoginJWT: FC = (props) => {
         margin="normal"
         autoFocus
         helperText={formik.touched.email && formik.errors.email}
-        label={t('Email address')}
+        label={t('Endereço de E-mail')}
         name="email"
         onBlur={formik.handleBlur}
         onChange={formik.handleChange}
@@ -89,7 +89,7 @@ export const LoginJWT: FC = (props) => {
         fullWidth
         margin="normal"
         helperText={formik.touched.password && formik.errors.password}
-        label={t('Password')}
+        label={t('Senha')}
         name="password"
         onBlur={formik.handleBlur}
         onChange={formik.handleChange}
@@ -115,15 +115,15 @@ export const LoginJWT: FC = (props) => {
             label={
               <>
                 <Typography variant="body2">
-                  {t('I accept the')}{' '}
-                  <Link href="#">{t('terms and conditions')}</Link>.
+                  {t('Eu aceito os')}{' '}
+                  <Link href="#">{t('termos e condições de uso')}</Link>.
                 </Typography>
               </>
             }
           />
         </Box>
         <Link href="/auth/recover-password">
-          <b>{t('Lost password?')}</b>
+          <b>{t('Esqueceu sua senha?')}</b>
         </Link>
       </Box>
 
@@ -148,7 +148,7 @@ export const LoginJWT: FC = (props) => {
         size="large"
         variant="contained"
       >
-        {t('Sign in')}
+        {t('Entrar')}
       </Button>
     </form>
   );

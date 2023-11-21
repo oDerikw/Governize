@@ -14,10 +14,7 @@ import {
 import Head from 'next/head';
 import { Guest } from 'src/components/Guest';
 import { useAuth } from 'src/hooks/useAuth';
-import { RegisterAuth0 } from 'src/content/Auth/Register/RegisterAuth0';
-import { RegisterFirebaseAuth } from 'src/content/Auth/Register/RegisterFirebaseAuth';
 import { RegisterJWT } from 'src/content/Auth/Register/RegisterJWT';
-import { RegisterAmplify } from 'src/content/Auth/Register/RegisterAmplify';
 import BaseLayout from 'src/layouts/BaseLayout';
 import Link from 'src/components/Link';
 import { useRouter } from 'next/router';
@@ -175,7 +172,7 @@ function RegisterCover() {
   return (
     <>
       <Head>
-        <title>Register - Cover</title>
+        <title>Cadastro - Governize</title>
       </Head>
       <Content>
         <SidebarWrapper
@@ -201,7 +198,7 @@ function RegisterCover() {
                   px: 8
                 }}
               >
-                {t('Multiple authentication methods available')}
+                {t('Excluir - S/N')}
               </TypographyPrimary>
               <SwiperWrapper>
                 <Swiper
@@ -418,7 +415,7 @@ function RegisterCover() {
                     mb: 1
                   }}
                 >
-                  {t('Create account')}
+                  {t('Cadastro')}
                 </Typography>
                 <Typography
                   variant="h4"
@@ -428,13 +425,10 @@ function RegisterCover() {
                     mb: 3
                   }}
                 >
-                  {t('Fill in the fields below to sign up for an account.')}
+                  {t('Preencha os campos abaixo para criar sua conta.')}
                 </Typography>
               </Box>
-              {method === 'Auth0' && <RegisterAuth0 />}
-              {method === 'FirebaseAuth' && <RegisterFirebaseAuth />}
               {method === 'JWT' && <RegisterJWT />}
-              {method === 'Amplify' && <RegisterAmplify />}
               <Box mt={4}>
                 <Typography
                   component="span"
@@ -442,7 +436,7 @@ function RegisterCover() {
                   color="text.primary"
                   fontWeight="bold"
                 >
-                  {t('Already have an account?')}
+                  {t('Já possui uma conta?')}
                 </Typography>{' '}
                 <Box display={{ xs: 'block', md: 'inline-block' }}>
                   <Link
@@ -452,7 +446,7 @@ function RegisterCover() {
                         : '/auth/login/cover'
                     }
                   >
-                    <b>Sign in here</b>
+                    <b>Entre aqui</b>
                   </Link>
                 </Box>
               </Box>

@@ -95,7 +95,7 @@ function RecoverPasswordBasic() {
   return (
     <>
       <Head>
-        <title>Recover Password</title>
+        <title>Recuperar Senha - Governize</title>
       </Head>
       <MainContent>
         <Container maxWidth="sm">
@@ -113,7 +113,7 @@ function RecoverPasswordBasic() {
                   mb: 1
                 }}
               >
-                {t('Recover Password')}
+                {t('Recuperar Senha')}
               </Typography>
               <Typography
                 variant="h4"
@@ -124,7 +124,7 @@ function RecoverPasswordBasic() {
                 }}
               >
                 {t(
-                  'Enter the email used for registration to reset your password.'
+                  'Preencha o endereço de e-mail usado no seu cadastro para recuperar sua senha.'
                 )}
               </Typography>
             </Box>
@@ -137,10 +137,10 @@ function RecoverPasswordBasic() {
               validationSchema={Yup.object().shape({
                 email: Yup.string()
                   .email(
-                    t('The email provided should be a valid email address')
+                    t('O endereço de e-mail deve ser um e-mail válido')
                   )
                   .max(255)
-                  .required(t('The email field is required'))
+                  .required(t('O espaço de e-mail é obrigatório'))
               })}
               onSubmit={async (
                 _values,
@@ -174,7 +174,7 @@ function RecoverPasswordBasic() {
                     error={Boolean(touched.email && errors.email)}
                     fullWidth
                     helperText={touched.email && errors.email}
-                    label={t('Email address')}
+                    label={t('Endereço de E-mail')}
                     margin="normal"
                     name="email"
                     onBlur={handleBlur}
@@ -196,7 +196,7 @@ function RecoverPasswordBasic() {
                     size="large"
                     variant="contained"
                   >
-                    {t('Send me a new password')}
+                    {t('Enviar')}
                   </Button>
                 </form>
               )}
@@ -209,14 +209,14 @@ function RecoverPasswordBasic() {
               color="text.primary"
               fontWeight="bold"
             >
-              {t('Want to try to sign in again?')}
+              {t('Gostaria de tentar logar novamente?')}
             </Typography>{' '}
             <Link
               href={
-                demo ? `/auth/login/basic?demo=${demo}` : '/auth/login/basic'
+                demo ? `/auth/login/cover?demo=${demo}` : '/auth/login/cover'
               }
             >
-              <b>Click here</b>
+              <b>Clique aqui</b>
             </Link>
           </Box>
         </Container>

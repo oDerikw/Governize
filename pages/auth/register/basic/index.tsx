@@ -10,10 +10,7 @@ import {
 import Head from 'next/head';
 import { Guest } from 'src/components/Guest';
 import { useAuth } from 'src/hooks/useAuth';
-import { RegisterAuth0 } from 'src/content/Auth/Register/RegisterAuth0';
-import { RegisterFirebaseAuth } from 'src/content/Auth/Register/RegisterFirebaseAuth';
 import { RegisterJWT } from 'src/content/Auth/Register/RegisterJWT';
-import { RegisterAmplify } from 'src/content/Auth/Register/RegisterAmplify';
 import { useTranslation } from 'react-i18next';
 import Logo from 'src/components/LogoSign';
 import BaseLayout from 'src/layouts/BaseLayout';
@@ -116,10 +113,7 @@ function RegisterBasic() {
                   {t('Fill in the fields below to sign up for an account.')}
                 </Typography>
               </Box>
-              {method === 'Auth0' && <RegisterAuth0 />}
-              {method === 'FirebaseAuth' && <RegisterFirebaseAuth />}
               {method === 'JWT' && <RegisterJWT />}
-              {method === 'Amplify' && <RegisterAmplify />}
               <Box mt={4}>
                 <Typography
                   component="span"
