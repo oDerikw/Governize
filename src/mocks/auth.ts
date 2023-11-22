@@ -41,7 +41,7 @@ class AuthApi {
       } catch (err) {
         
         if (err.response && err.response.status === 401) {
-          reject(new Error('Invalid email or password' ));
+          reject(new Error('E-mail ou senha inválidos' ));
         } else {
           
           reject(new Error('Internal server error!'));
