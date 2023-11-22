@@ -49,26 +49,6 @@
       "email": "demo1@example.com",
       "password": "TokyoPass1@",
       "id": 4
-    },
-    {
-      "email": "demo1@example.com",
-      "password": "TokyoPass1@",
-      "id": 5
-    },
-    {
-      "email": "demo1@example.com",
-      "password": "TokyoPass1@",
-      "id": 6
-    },
-    {
-      "email": "demo2@example.com",
-      "password": "TokyoPass1@",
-      "id": 7
-    },
-    {
-      "email": "demo1@example.com",
-      "password": "TokyoPass1@",
-      "id": 8
     }
   ]
 }

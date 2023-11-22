@@ -109,11 +109,7 @@ function RegisterWizard() {
                 promo: true,
                 password: '',
                 password_confirm: '',
-                email: '',
-                phone: '',
-                company_name: '',
-                company_size: '',
-                company_role: ''
+                email: ''
               }}
               onSubmit={async (_values) => {
                 await sleep(3000);
@@ -196,72 +192,7 @@ function RegisterWizard() {
                         placeholder={t('Confirme sua senha aqui...')}
                       />
                     </Grid>
-                    <Grid item xs={12} md={6}>
-                      <Field
-                        fullWidth
-                        name="phone"
-                        type="number"
-                        component={TextField}
-                        label={t('Número de telefone')}
-                      />
-                    </Grid>
-                  </Grid>
-                </Box>
-              </FormikStep>
-
-              <FormikStep
-                validationSchema={Yup.object().shape({
-                  company_size: Yup.string()
-                    .max(55)
-                    .required(t('The first name field is required')),
-                  company_name: Yup.string()
-                    .max(255)
-                    .required(t('The first name field is required')),
-                  company_role: Yup.string()
-                    .max(255)
-                    .required(t('The first name field is required'))
-                })}
-                label={t('Detalhes da empresa')}
-              >
-                <Box p={4}>
-                  <Grid container spacing={4}>
-                    <Grid item xs={12} md={6}>
-                      <Field
-                        fullWidth
-                        name="company_name"
-                        component={TextField}
-                        label={t('Company name')}
-                      />
-                    </Grid>
-                    <Grid item xs={12} md={6}>
-                      <Field
-                        fullWidth
-                        name="company_size"
-                        type="number"
-                        component={TextField}
-                        label={t('Company size')}
-                      />
-                    </Grid>
-                    <Grid item xs={12} md={6}>
-                      <Field
-                        fullWidth
-                        name="company_role"
-                        component={TextField}
-                        label={t('Company role')}
-                      />
-                    </Grid>
                     <Grid item xs={12}>
-                      <Field
-                        name="promo"
-                        type="checkbox"
-                        component={CheckboxWithLabel}
-                        Label={{
-                          label: t(
-                            'Sim, quero receber e-mails sobre x/y/z da Governize sobre...'
-                          )
-                        }}
-                      />
-                      <br />
                       <Field
                         name="terms"
                         type="checkbox"
@@ -302,7 +233,7 @@ function RegisterWizard() {
                       )}
                     </Typography>
 
-                    <Button fullWidth variant="contained" href="/">
+                    <Button fullWidth variant="contained" href="/auth/login/">
                       Entrar
                     </Button>
                   </Container>
@@ -384,7 +315,7 @@ export function FormikStepper({
                 type="button"
                 onClick={() => setStep((s) => s - 1)}
               >
-                {t('Anterior')}
+                {t('Voltar')}
               </Button>
 
               <Button
@@ -399,7 +330,7 @@ export function FormikStepper({
                 {isSubmitting
                   ? t('Enviando')
                   : isLastStep()
-                  ? t('Cadastro Realizado')
+                  ? t('Concluir')
                   : t('Próximo')}
               </Button>
             </BoxActions>
