@@ -1,12 +1,13 @@
 import { useEffect } from 'react';
 
-import { ListSubheader, alpha, Box, List, styled, Button, ListItem } from '@mui/material';
+import { ListSubheader, alpha, Box, Divider, List, styled, ListItem, Button,  useTheme } from '@mui/material';
 import SidebarMenuItem from './item';
 import menuItems, { MenuItem } from './items';
 import { useTranslation } from 'react-i18next';
 import { useRouter } from 'next/router';
 import { useAuth } from 'src/hooks/useAuth';
 import LogoutOutlinedIcon from '@mui/icons-material/LogoutOutlined';
+import NextLink from 'next/link';
 
 const MenuWrapper = styled(Box)(
   ({ theme }) => `
@@ -149,74 +150,6 @@ const SubMenuWrapper = styled(Box)(
     }
 `
 );
-const LogoutButton = styled(Button)(
-  ({ theme }) => `
-  
-  .MuiList-root {
-
-    .MuiListItem-root {
-      padding: 1px 0;
-
-      .MuiBadge-root {
-        position: absolute;
-        right: ${theme.spacing(3.2)};
-
-        .MuiBadge-standard {
-          background: ${theme.colors.primary.main};
-          font-size: ${theme.typography.pxToRem(10)};
-          font-weight: bold;
-          text-transform: uppercase;
-          color: ${theme.palette.primary.contrastText};
-        }
-      }
-  
-      .MuiButton-root {
-        display: flex;
-        color: ${theme.colors.alpha.trueWhite[70]};
-        background-color: transparent;
-        width: 100%;
-        justify-content: flex-start;
-        padding: ${theme.spacing(1.2, 3)};
-
-        .MuiButton-startIcon,
-        .MuiButton-endIcon {
-          transition: ${theme.transitions.create(['color'])};
-
-          .MuiSvgIcon-root {
-            font-size: inherit;
-            transition: none;
-          }
-        }
-
-        .MuiButton-startIcon {
-          color: ${theme.colors.alpha.trueWhite[30]};
-          font-size: ${theme.typography.pxToRem(20)};
-          margin-right: ${theme.spacing(1)};
-        }
-        
-        .MuiButton-endIcon {
-          color: ${theme.colors.alpha.trueWhite[50]};
-          margin-left: auto;
-          opacity: .8;
-          font-size: ${theme.typography.pxToRem(20)};
-        }
-
-        &.Mui-active,
-        &:hover {
-          background-color: ${alpha(theme.colors.alpha.trueWhite[100], 0.06)};
-          color: ${theme.colors.alpha.trueWhite[100]};
-
-          .MuiButton-startIcon,
-          .MuiButton-endIcon {
-            color: ${theme.colors.alpha.trueWhite[100]};
-          }
-        }
-      }
-    }
-  }
-
-  `
-);
 
 const LogoutIcon = styled(LogoutOutlinedIcon)(
   ({ theme }) => `
@@ -291,7 +224,7 @@ function SidebarMenu() {
   const { t }: { t: any } = useTranslation();
   const router = useRouter();
   const { logout } = useAuth();
-
+  const theme = useTheme();
   const handleLogout = async (): Promise<void> => {
     try {
       await logout();
@@ -325,16 +258,28 @@ function SidebarMenu() {
               items: section.items,
               path: router.asPath
             })}
-            <ListItem component="div" className="Mui-children">
-              <LogoutButton  onClick={handleLogout} >
-                <LogoutIcon />
-                Sair
-              </LogoutButton >
-            </ListItem>
           </List>
           
         </MenuWrapper>
       ))}
+      <Divider
+            sx={{
+              my: theme.spacing(1),
+              mx: theme.spacing(2),
+              background: theme.colors.alpha.trueWhite[10]
+            }}
+      />
+      <SubMenuWrapper>
+        <List component="div">
+          <ListItem component="div">
+            <NextLink href="/" passHref>
+              <Button startIcon={<LogoutIcon />} onClick={handleLogout}>
+                Sair
+              </Button>
+            </NextLink>
+          </ListItem>
+        </List>
+      </SubMenuWrapper>
       
     </>
   );

@@ -5,17 +5,15 @@ import { SidebarContext } from 'src/contexts/SidebarContext';
 import {
   Box,
   Drawer,
-  alpha,
   styled,
   Divider,
   useTheme,
-  lighten,
-  darken
+  
 } from '@mui/material';
 
-import SidebarTopSection from './SidebarTopSection';
+//import SidebarTopSection from './SidebarTopSection';
 import SidebarMenu from './SidebarMenu';
-import SidebarFooter from './SidebarFooter';
+//import SidebarFooter from './SidebarFooter';
 
 
 
@@ -74,12 +72,8 @@ function Sidebar() {
           />
           <SidebarMenu />
         </Scrollbar>
-        <Divider
-          sx={{
-            background: theme.colors.alpha.trueWhite[10]
-          }}
-        />
-        <SidebarFooter />
+        
+        {/*<SidebarFooter />*/}
       </SidebarWrapper>
       <Drawer
         sx={{
@@ -106,16 +100,10 @@ function Sidebar() {
               </Box>
             </Box>
         
-            <Divider
-              sx={{
-                my: theme.spacing(3),
-                mx: theme.spacing(2),
-                background: theme.colors.alpha.trueWhite[10]
-              }}
-            />
+            
             <SidebarMenu />
           </Scrollbar>
-          <SidebarFooter />
+          {/*<SidebarFooter />*/}
         </SidebarWrapper>
       </Drawer>
     </>

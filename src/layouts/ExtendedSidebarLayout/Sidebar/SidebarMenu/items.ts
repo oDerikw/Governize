@@ -121,11 +121,6 @@ const menuItems: MenuItems[] = [
         name: 'Monitoramento (beta)',
         link: '/management/projects',
         icon: ForumOutlinedIcon
-      },
-      {
-        name: 'Sair',
-        link: '/management/projects',
-        icon: LogoutOutlinedIcon
       }
     ]
   },
