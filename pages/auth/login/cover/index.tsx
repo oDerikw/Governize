@@ -251,8 +251,8 @@ function LoginCover() {
                 <Link
                   href={
                     demo
-                      ? `/auth/register/wizard?demo=${demo}`
-                      : '/auth/register/wizard'
+                      ? `/auth/register/?demo=${demo}`
+                      : '/auth/register/'
                   }
                 >
                   <b>Se cadastre aqui</b>

@@ -36,7 +36,8 @@ const MainContent = styled(Box)(
 
 const BoxActions = styled(Box)(
   ({ theme }) => `
-    background: ${theme.colors.alpha.black[5]}
+    background: ${theme.colors.alpha.black[5]};
+    padding: 16px;
 `
 );
 
@@ -124,21 +125,24 @@ function RegisterWizard() {
                     .max(255)
                     .required(t('O espaço de e-mail é obrigatório')),
                   first_name: Yup.string()
-                    .max(255)
+                    .max(255, 'Limite máximo de caracteres atingido')
+                    .matches(/^[a-z0-9]+$/i, "Nome não pode conter caracteres especiais")
                     .required(t('O espaço do primeiro nome é obrigatório')),
                   last_name: Yup.string()
-                    .max(255)
+                    .max(255, 'Limite máximo de caracteres atingido')
+                    .matches(/^[a-z0-9]+$/i, "Nome não pode conter caracteres especiais")
                     .required(t('O espaço do último nome é obrigatório')),
                   password: Yup.string()
-                    .min(8)
-                    .max(255)
+                    .min(8, 'Senha deve ter mais de 8 caracteres')
+                    .max(255, 'Senha muito longa')
+                    .matches(/^[a-z0-9]+$/i, "Senha não pode conter caracteres especiais")
                     .required(t('O espaço da senha é obrigatório')),
                   password_confirm: Yup.string()
                     .oneOf(
                       [Yup.ref('password')],
                       t('Ambas as senhas devem ser iguais')
                     )
-                    .required(t('Esse campo é obrigatório'))
+                    .required(('Esse campo é obrigatório'))
                 })}
                 label={t('Informações')}
               >
