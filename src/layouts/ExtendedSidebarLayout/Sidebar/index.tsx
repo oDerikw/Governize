@@ -16,7 +16,8 @@ import {
 import SidebarTopSection from './SidebarTopSection';
 import SidebarMenu from './SidebarMenu';
 import SidebarFooter from './SidebarFooter';
-import Logo from 'src/components/LogoSign';
+
+
 
 const SidebarWrapper = styled(Box)(
   ({ theme }) => `
@@ -62,7 +63,7 @@ function Sidebar() {
                 width: 52
               }}
             >
-              <Logo />
+             
             </Box>
           </Box>
           <Divider
@@ -101,31 +102,23 @@ function Sidebar() {
       >
         <SidebarWrapper
           sx={{
-            background:
-              theme.palette.mode === 'dark'
-                ? theme.colors.alpha.white[100]
-                : darken(theme.colors.alpha.black[100], 0.5)
+            background:'#0c3c44',
           }}
         >
           <Scrollbar>
             <Box mt={3}>
               <Box
-                mx={2}
+                mx={10}
                 sx={{
                   width: 52
                 }}
               >
-                <Logo />
+            
+                <img height={100} alt="Governize" src='/governize.png' />
+                
               </Box>
             </Box>
-            <Divider
-              sx={{
-                my: theme.spacing(3),
-                mx: theme.spacing(2),
-                background: theme.colors.alpha.trueWhite[10]
-              }}
-            />
-            <SidebarTopSection />
+        
             <Divider
               sx={{
                 my: theme.spacing(3),
