@@ -10,17 +10,13 @@ import {
 import Head from 'next/head';
 import { useAuth } from 'src/hooks/useAuth';
 import { Guest } from 'src/components/Guest';
-import { LoginAuth0 } from 'src/content/Auth/Login/LoginAuth0';
 
-import { LoginFirebaseAuth } from 'src/content/Auth/Login/LoginFirebaseAuth';
 import { LoginJWT } from 'src/content/Auth/Login/LoginJWT';
-import { LoginAmplify } from 'src/content/Auth/Login/LoginAmplify';
 import { useTranslation } from 'react-i18next';
 import Logo from 'src/components/LogoSign';
 import BaseLayout from 'src/layouts/BaseLayout';
 import Link from 'src/components/Link';
 import { useRouter } from 'next/router';
-import LoginAuthApi from '@/content/Auth/Login/LoginAuthApi';
 
 const icons = {
   Auth0: '/static/images/logo/auth0.svg',
@@ -118,11 +114,7 @@ function LoginBasic() {
                   {t('Fill in the fields below to sign into your account.')}
                 </Typography>
               </Box>
-              {method === 'Auth0' && <LoginAuth0 />}
-              {method === 'FirebaseAuth' && <LoginFirebaseAuth />}
               {method === 'JWT' && <LoginJWT />}
-              {method === 'Amplify' && <LoginAmplify />}
-              {method === 'ApiAuth' && <LoginAuthApi />}
               <Box my={4}>
                 <Typography
                   component="span"

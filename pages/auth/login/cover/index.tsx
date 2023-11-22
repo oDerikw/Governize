@@ -10,10 +10,7 @@ import {
 import Head from 'next/head';
 import { useAuth } from 'src/hooks/useAuth';
 import { Guest } from 'src/components/Guest';
-import { LoginAuth0 } from 'src/content/Auth/Login/LoginAuth0';
-import { LoginFirebaseAuth } from 'src/content/Auth/Login/LoginFirebaseAuth';
 import { LoginJWT } from 'src/content/Auth/Login/LoginJWT';
-import { LoginAmplify } from 'src/content/Auth/Login/LoginAmplify';
 import BaseLayout from 'src/layouts/BaseLayout';
 import Link from 'src/components/Link';
 import { useRouter } from 'next/router';
@@ -21,7 +18,6 @@ import { useRouter } from 'next/router';
 import { useTranslation } from 'react-i18next';
 import Logo from 'src/components/Logo';
 import Scrollbar from 'src/components/Scrollbar';
-import LoginAuthApi from '@/content/Auth/Login/LoginAuthApi';
 
 const icons = {
   Auth0: '/static/images/logo/auth0.svg',
@@ -101,7 +97,7 @@ function LoginCover() {
   return (
     <>
       <Head>
-        <title>Login - Cover</title>
+        <title>Login - Governize</title>
       </Head>
       <Content>
         <SidebarWrapper
@@ -119,7 +115,7 @@ function LoginCover() {
                     mb: 7
                   }}
                 >
-                  {t('Multiple auth methods included')}
+                  {t('Excluir - S/N')}
                 </TypographyH1>
                 <Box
                   sx={{
@@ -187,7 +183,7 @@ function LoginCover() {
                   }}
                 >
                   {t(
-                    'Choose between JSON Web Token, Firebase, AWS Amplify or Auth0. Regular login/register functionality is also available.'
+                    'At vero eos et atque corrupti quos dolores et quas provident, similique sunt in culpa qui id est laborum et dolorum fuga.'
                   )}
                 </Typography>
                 <Typography
@@ -195,11 +191,11 @@ function LoginCover() {
                   color="text.primary"
                   fontWeight="bold"
                 >
-                  {t('Want to switch auth methods?')}
+                  {t('Lorem Text')}
                 </Typography>
                 <Typography variant="subtitle1">
                   {t(
-                    'It only takes seconds. There is a documentation section showing how to do exactly that'
+                    'Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id'
                   )}
                   . <Link href="/docs">Read docs</Link>
                 </Typography>
@@ -229,7 +225,7 @@ function LoginCover() {
                     mb: 1
                   }}
                 >
-                  {t('Sign in')}
+                  {t('Entrar')}
                 </Typography>
                 <Typography
                   variant="h4"
@@ -239,14 +235,10 @@ function LoginCover() {
                     mb: 3
                   }}
                 >
-                  {t('Fill in the fields below to sign into your account.')}
+                  {t('Preencha os campos abaixo para logar na sua conta.')}
                 </Typography>
               </Box>
-              {method === 'Auth0' && <LoginAuth0 />}
-              {method === 'FirebaseAuth' && <LoginFirebaseAuth />}
               {method === 'JWT' && <LoginJWT />}
-              {method === 'Amplify' && <LoginAmplify />}
-              {method === 'Amplify' && <LoginAuthApi />}
               <Box my={4}>
                 <Typography
                   component="span"
@@ -254,24 +246,24 @@ function LoginCover() {
                   color="text.primary"
                   fontWeight="bold"
                 >
-                  {t('Don’t have an account, yet?')}
+                  {t('Ainda não tem uma conta?')}
                 </Typography>{' '}
                 <Link
                   href={
                     demo
-                      ? `/auth/register/cover?demo=${demo}`
-                      : '/auth/register/cover'
+                      ? `/auth/register/wizard?demo=${demo}`
+                      : '/auth/register/wizard'
                   }
                 >
-                  <b>Sign up here</b>
+                  <b>Se cadastre aqui</b>
                 </Link>
               </Box>
               {method !== 'Auth0' && (
                 <Tooltip
-                  title={t('Used only for the live preview demonstration !')}
+                  title={t('Usado apenas para demonstração!')}
                 >
                   <Alert severity="warning">
-                    Use <b>demo@example.com</b> and password <b>TokyoPass1@</b>
+                    Use <b>john@mail.com</b> e <b>changeme</b> como senha
                   </Alert>
                 </Tooltip>
               )}

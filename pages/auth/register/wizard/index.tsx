@@ -10,10 +10,7 @@ import {
   Step,
   StepLabel,
   Stepper,
-  Collapse,
-  Alert,
   Avatar,
-  IconButton,
   styled
 } from '@mui/material';
 import type { ReactElement } from 'react';
@@ -21,7 +18,6 @@ import BaseLayout from 'src/layouts/BaseLayout';
 import { Field, Form, Formik, FormikConfig, FormikValues } from 'formik';
 import { CheckboxWithLabel, TextField } from 'formik-mui';
 import * as Yup from 'yup';
-import CloseIcon from '@mui/icons-material/Close';
 import CheckTwoToneIcon from '@mui/icons-material/CheckTwoTone';
 import { Guest } from 'src/components/Guest';
 import Link from 'src/components/Link';
@@ -64,12 +60,11 @@ const sleep = (time: number) => new Promise((acc) => setTimeout(acc, time));
 
 function RegisterWizard() {
   const { t }: { t: any } = useTranslation();
-  const [openAlert, setOpenAlert] = useState(true);
 
   return (
     <>
       <Head>
-        <title>Register - Wizard</title>
+        <title>Cadastro - Governize</title>
       </Head>
       <MainContent>
         <Container
@@ -92,7 +87,7 @@ function RegisterWizard() {
                   mb: 1
                 }}
               >
-                {t('Create account')}
+                {t('Criar Conta')}
               </Typography>
               <Typography
                 variant="h4"
@@ -102,7 +97,7 @@ function RegisterWizard() {
                   mb: 3
                 }}
               >
-                {t('Fill in the fields below to sign up for an account.')}
+                {t('Preencha os campos abaixo para criar sua conta.')}
               </Typography>
             </Box>
 
@@ -128,28 +123,28 @@ function RegisterWizard() {
                 validationSchema={Yup.object().shape({
                   email: Yup.string()
                     .email(
-                      t('The email provided should be a valid email address')
+                      t('O endereço de e-mail deve ser um e-mail válido')
                     )
                     .max(255)
-                    .required(t('The email field is required')),
+                    .required(t('O espaço de e-mail é obrigatório')),
                   first_name: Yup.string()
                     .max(255)
-                    .required(t('The first name field is required')),
+                    .required(t('O espaço do primeiro nome é obrigatório')),
                   last_name: Yup.string()
                     .max(255)
-                    .required(t('The first name field is required')),
+                    .required(t('O espaço do último nome é obrigatório')),
                   password: Yup.string()
                     .min(8)
                     .max(255)
-                    .required(t('The password field is required')),
+                    .required(t('O espaço da senha é obrigatório')),
                   password_confirm: Yup.string()
                     .oneOf(
                       [Yup.ref('password')],
-                      t('Both password fields need to be the same')
+                      t('Ambas as senhas devem ser iguais')
                     )
-                    .required(t('This field is required'))
+                    .required(t('Esse campo é obrigatório'))
                 })}
-                label={t('Personal Informations')}
+                label={t('Informações')}
               >
                 <Box p={4}>
                   <Grid container spacing={4}>
@@ -158,8 +153,8 @@ function RegisterWizard() {
                         fullWidth
                         name="first_name"
                         component={TextField}
-                        label={t('First name')}
-                        placeholder={t('Write your first name here...')}
+                        label={t('Primeiro Nome')}
+                        placeholder={t('Escreva seu nome aqui...')}
                       />
                     </Grid>
                     <Grid item xs={12} md={6}>
@@ -167,8 +162,8 @@ function RegisterWizard() {
                         fullWidth
                         name="last_name"
                         component={TextField}
-                        label={t('Last name')}
-                        placeholder={t('Write your last name here...')}
+                        label={t('Último Nome')}
+                        placeholder={t('Escreva seu nome aqui...')}
                       />
                     </Grid>
                     <Grid item xs={12} md={6}>
@@ -176,8 +171,8 @@ function RegisterWizard() {
                         fullWidth
                         name="email"
                         component={TextField}
-                        label={t('Email')}
-                        placeholder={t('Write your email here...')}
+                        label={t('E-mail')}
+                        placeholder={t('Escreva seu e-mail aqui...')}
                       />
                     </Grid>
                     <Grid item xs={12} md={6} />
@@ -187,8 +182,8 @@ function RegisterWizard() {
                         type="password"
                         name="password"
                         component={TextField}
-                        label={t('Password')}
-                        placeholder={t('Write a password here...')}
+                        label={t('Senha')}
+                        placeholder={t('Escreva sua senha aqui...')}
                       />
                     </Grid>
                     <Grid item xs={12} md={6}>
@@ -197,8 +192,8 @@ function RegisterWizard() {
                         type="password"
                         name="password_confirm"
                         component={TextField}
-                        label={t('Confirm password')}
-                        placeholder={t('Confirm password here...')}
+                        label={t('Confirmação de Senha')}
+                        placeholder={t('Confirme sua senha aqui...')}
                       />
                     </Grid>
                     <Grid item xs={12} md={6}>
@@ -207,38 +202,13 @@ function RegisterWizard() {
                         name="phone"
                         type="number"
                         component={TextField}
-                        label={t('Phone number')}
-                      />
-                    </Grid>
-                    <Grid item xs={12}>
-                      <Field
-                        name="promo"
-                        type="checkbox"
-                        component={CheckboxWithLabel}
-                        Label={{
-                          label: t(
-                            'Yes, I want to receive monthly promotional materials.'
-                          )
-                        }}
-                      />
-                      <br />
-                      <Field
-                        name="terms"
-                        type="checkbox"
-                        component={CheckboxWithLabel}
-                        Label={{
-                          label: (
-                            <Typography variant="body2">
-                              {t('I accept the')}{' '}
-                              <Link href="#">{t('terms and conditions')}</Link>.
-                            </Typography>
-                          )
-                        }}
+                        label={t('Número de telefone')}
                       />
                     </Grid>
                   </Grid>
                 </Box>
               </FormikStep>
+
               <FormikStep
                 validationSchema={Yup.object().shape({
                   company_size: Yup.string()
@@ -251,7 +221,7 @@ function RegisterWizard() {
                     .max(255)
                     .required(t('The first name field is required'))
                 })}
-                label={t('Company Details')}
+                label={t('Detalhes da empresa')}
               >
                 <Box p={4}>
                   <Grid container spacing={4}>
@@ -280,39 +250,42 @@ function RegisterWizard() {
                         label={t('Company role')}
                       />
                     </Grid>
+                    <Grid item xs={12}>
+                      <Field
+                        name="promo"
+                        type="checkbox"
+                        component={CheckboxWithLabel}
+                        Label={{
+                          label: t(
+                            'Sim, quero receber e-mails sobre x/y/z da Governize sobre...'
+                          )
+                        }}
+                      />
+                      <br />
+                      <Field
+                        name="terms"
+                        type="checkbox"
+                        component={CheckboxWithLabel}
+                        Label={{
+                          label: (
+                            <Typography variant="body2">
+                              {t('Eu aceito os')}{' '}
+                              <Link href="#">{t('termos e condições')}</Link>.
+                            </Typography>
+                          )
+                        }}
+                      />
+                    </Grid>
                   </Grid>
                 </Box>
               </FormikStep>
-              <FormikStep label={t('Complete Registration')}>
+
+              <FormikStep label={t('Cadastro realizado com sucesso')}>
                 <Box px={4} py={8}>
                   <Container maxWidth="sm">
                     <AvatarSuccess>
                       <CheckTwoToneIcon />
                     </AvatarSuccess>
-                    <Collapse in={openAlert}>
-                      <Alert
-                        sx={{
-                          mt: 5
-                        }}
-                        action={
-                          <IconButton
-                            aria-label="close"
-                            color="inherit"
-                            size="small"
-                            onClick={() => {
-                              setOpenAlert(false);
-                            }}
-                          >
-                            <CloseIcon fontSize="inherit" />
-                          </IconButton>
-                        }
-                        severity="info"
-                      >
-                        {t(
-                          'A confirmation has been sent to your email address'
-                        )}
-                      </Alert>
-                    </Collapse>
 
                     <Typography
                       align="center"
@@ -325,12 +298,12 @@ function RegisterWizard() {
                       variant="h2"
                     >
                       {t(
-                        'Check your email to confirm your email and start using your account'
+                        'Verifique seu endereço de e-mail para confirmar seu cadastro.'
                       )}
                     </Typography>
 
                     <Button fullWidth variant="contained" href="/">
-                      Continue to sign in
+                      Entrar
                     </Button>
                   </Container>
                 </Box>
@@ -411,7 +384,7 @@ export function FormikStepper({
                 type="button"
                 onClick={() => setStep((s) => s - 1)}
               >
-                {t('Previous')}
+                {t('Anterior')}
               </Button>
 
               <Button
@@ -424,10 +397,10 @@ export function FormikStepper({
                 type="submit"
               >
                 {isSubmitting
-                  ? t('Submitting')
+                  ? t('Enviando')
                   : isLastStep()
-                  ? t('Complete registration')
-                  : t('Next step')}
+                  ? t('Cadastro Realizado')
+                  : t('Próximo')}
               </Button>
             </BoxActions>
           ) : null}
