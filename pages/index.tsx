@@ -5,7 +5,7 @@ import BaseLayout from 'src/layouts/BaseLayout';
 import Link from 'src/components/Link';
 import Head from 'next/head';
 import { useTranslation } from 'react-i18next';
-import Logo from 'src/components/LogoSign';
+import Logo from 'src/components/Logo';
 import Hero from 'src/content/Overview/Hero';
 import Highlights from 'src/content/Overview/Highlights';
 import LanguageSwitcher from 'src/layouts/BoxedSidebarLayout/Header/Buttons/LanguageSwitcher';
@@ -16,7 +16,7 @@ const HeaderWrapper = styled(Card)(
   width: 100%;
   display: flex;
   align-items: center;
-  background:  #0c3c44;
+  background: ${theme.palette.common.white};
   height: ${theme.spacing(10)};
   margin-bottom: ${theme.spacing(10)};
 `
@@ -39,7 +39,7 @@ function Overview() {
   return (
     <OverviewWrapper>
       <Head>
-        <title>Tokyo White NextJS Typescript Admin Dashboard</title>
+        <title>Governize</title>
       </Head>
       <HeaderWrapper>
         <Container maxWidth="lg">
