@@ -13,6 +13,7 @@ import {
 
 //import SidebarTopSection from './SidebarTopSection';
 import SidebarMenu from './SidebarMenu';
+import Logo from '@/components/LogoSign';
 //import SidebarFooter from './SidebarFooter';
 
 
@@ -59,7 +60,7 @@ function Sidebar() {
                 width: 52
               }}
             >
-             <img height={100} alt="Governize" src='/governize.png' />
+            <Logo/>
             </Box>
           </Box>
           
@@ -95,7 +96,7 @@ function Sidebar() {
                 }}
               >
                 
-                <img height={100} alt="Governize" src='/governize.png' />
+                <Logo />
                 
               </Box>
             </Box>

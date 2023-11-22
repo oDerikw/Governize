@@ -16,6 +16,7 @@ const HeaderWrapper = styled(Card)(
   width: 100%;
   display: flex;
   align-items: center;
+  background:  #0c3c44;
   height: ${theme.spacing(10)};
   margin-bottom: ${theme.spacing(10)};
 `
@@ -30,6 +31,8 @@ const OverviewWrapper = styled(Box)(
 `
 );
 
+
+
 function Overview() {
   const { t }: { t: any } = useTranslation();
 
@@ -41,7 +44,7 @@ function Overview() {
       <HeaderWrapper>
         <Container maxWidth="lg">
           <Box display="flex" alignItems="center">
-            <Logo />
+          <Logo/>
             <Box
               display="flex"
               alignItems="center"

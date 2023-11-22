@@ -1,11 +1,8 @@
 import {
-  Box,
   Tooltip,
-  Badge,
   TooltipProps,
   tooltipClasses,
   styled,
-  useTheme
 } from '@mui/material';
 import Link from 'src/components/Link';
 import { useTranslation } from 'react-i18next';
@@ -13,68 +10,14 @@ import { useTranslation } from 'react-i18next';
 const LogoWrapper = styled(Link)(
   ({ theme }) => `
         color: ${theme.palette.text.primary};
+        background:  #0c3c44;
         display: flex;
         text-decoration: none;
-        width: 53px;
+        overflow:hidden;
+        width: 100px;
+        border-radius:20%;
         margin: 0 auto;
         font-weight: ${theme.typography.fontWeightBold};
-`
-);
-
-const LogoSignWrapper = styled(Box)(
-  () => `
-        width: 52px;
-        height: 38px;
-`
-);
-
-const LogoSign = styled(Box)(
-  ({ theme }) => `
-        background: ${theme.general.reactFrameworkColor};
-        width: 18px;
-        height: 18px;
-        border-radius: ${theme.general.borderRadiusSm};
-        position: relative;
-        transform: rotate(45deg);
-        top: 3px;
-        left: 17px;
-
-        &:after, 
-        &:before {
-            content: "";
-            display: block;
-            width: 18px;
-            height: 18px;
-            position: absolute;
-            top: -1px;
-            right: -20px;
-            transform: rotate(0deg);
-            border-radius: ${theme.general.borderRadiusSm};
-        }
-
-        &:before {
-            background: ${theme.palette.primary.main};
-            right: auto;
-            left: 0;
-            top: 20px;
-        }
-
-        &:after {
-            background: ${theme.palette.secondary.main};
-        }
-`
-);
-
-const LogoSignInner = styled(Box)(
-  ({ theme }) => `
-        width: 16px;
-        height: 16px;
-        position: absolute;
-        top: 12px;
-        left: 12px;
-        z-index: 5;
-        border-radius: ${theme.general.borderRadiusSm};
-        background: ${theme.header.background};
 `
 );
 
@@ -97,29 +40,13 @@ const TooltipWrapper = styled(({ className, ...props }: TooltipProps) => (
 
 function Logo() {
   const { t }: { t: any } = useTranslation();
-  const theme = useTheme();
 
   return (
-    <TooltipWrapper title={t('Tokyo Next.js Typescript Admin Dashboard')} arrow>
+    <TooltipWrapper title={t('Governize')} arrow>
       <LogoWrapper href="/">
-        <Badge
-          sx={{
-            '.MuiBadge-badge': {
-              fontSize: theme.typography.pxToRem(11),
-              right: -2,
-              top: 8
-            }
-          }}
-          overlap="circular"
-          color="success"
-          badgeContent="3.1"
-        >
-          <LogoSignWrapper>
-            <LogoSign>
-              <LogoSignInner />
-            </LogoSign>
-          </LogoSignWrapper>
-        </Badge>
+        
+          <img height={100} alt="Governize" src='/governize.png' />
+        
       </LogoWrapper>
     </TooltipWrapper>
   );
