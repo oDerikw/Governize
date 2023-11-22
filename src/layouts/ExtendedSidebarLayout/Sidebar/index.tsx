@@ -24,6 +24,7 @@ const SidebarWrapper = styled(Box)(
         width: ${theme.sidebar.width};
         min-width: ${theme.sidebar.width};
         color: ${theme.colors.alpha.trueWhite[70]};
+        background: #0c3c44;
         position: relative;
         z-index: 7;
         height: 100%;
@@ -47,10 +48,7 @@ function Sidebar() {
           position: 'fixed',
           left: 0,
           top: 0,
-          background:
-            theme.palette.mode === 'dark'
-              ? alpha(lighten(theme.header.background, 0.1), 0.5)
-              : darken(theme.colors.alpha.black[100], 0.5),
+          background:' #0c3c44',
           boxShadow:
             theme.palette.mode === 'dark' ? theme.sidebar.boxShadow : 'none'
         }}
@@ -58,22 +56,15 @@ function Sidebar() {
         <Scrollbar>
           <Box mt={3}>
             <Box
-              mx={2}
+              mx={10}
               sx={{
                 width: 52
               }}
             >
-             
+             <img height={100} alt="Governize" src='/governize.png' />
             </Box>
           </Box>
-          <Divider
-            sx={{
-              my: theme.spacing(3),
-              mx: theme.spacing(2),
-              background: theme.colors.alpha.trueWhite[10]
-            }}
-          />
-          <SidebarTopSection />
+          
           <Divider
             sx={{
               my: theme.spacing(3),
@@ -100,11 +91,7 @@ function Sidebar() {
         variant="temporary"
         elevation={9}
       >
-        <SidebarWrapper
-          sx={{
-            background:'#0c3c44',
-          }}
-        >
+        <SidebarWrapper>
           <Scrollbar>
             <Box mt={3}>
               <Box
@@ -113,7 +100,7 @@ function Sidebar() {
                   width: 52
                 }}
               >
-            
+                
                 <img height={100} alt="Governize" src='/governize.png' />
                 
               </Box>
