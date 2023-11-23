@@ -55,7 +55,7 @@ const colors = {
       bodyBg: '#f2f5f9'
     },
     sidebar: {
-      background: themeColors.white,
+      background: '#0c3c44',
       textColor: themeColors.secondary,
       dividerBg: '#f2f5f9',
       menuItemColor: '#242E6F',
@@ -256,7 +256,7 @@ export const PureLightTheme = createTheme({
       black: colors.alpha.black[100],
       white: colors.alpha.white[100]
     },
-    mode: 'light',
+    mode: 'dark',
     primary: {
       light: colors.primary.light,
       main: colors.primary.main,

@@ -4,15 +4,15 @@ import '@mui/lab/themeAugmentation';
 // import i18n from 'src/i18n/i18n';
 
 const themeColors = {
-  primary: '#2442AF',
-  secondary: '#6E759F',
-  success: '#57CA22',
+  primary: '#b1f830',
+  secondary: '#0B2930',
+  success: '#40991A',
   warning: '#FFA319',
-  error: '#FF1943',
+  error: '#CD4343',
   info: '#33C2FF',
-  black: '#223354',
+  black: '#061e24',
   white: '#ffffff',
-  primaryAlt: '#000C57'
+  primaryAlt: '#005749'
 };
 
 const colors = {
@@ -44,7 +44,7 @@ const colors = {
       '0px 1px 4px rgba(28, 52, 140, 0.25), 0px 3px 12px 2px rgba(28, 52, 140, 0.35)',
     warning:
       '0px 1px 4px rgba(255, 163, 25, 0.25), 0px 3px 12px 2px rgba(255, 163, 25, 0.35)',
-    card: '0px 9px 16px rgba(159, 162, 191, .18), 0px 2px 2px rgba(159, 162, 191, 0.32)',
+    card: '0px 9px 16px rgba(65, 65, 66 .18), 0px 2px 2px rgba(65, 65, 66, 0.32)',
     cardSm:
       '0px 2px 3px rgba(159, 162, 191, .18), 0px 1px 1px rgba(159, 162, 191, 0.32)',
     cardLg:
@@ -52,10 +52,10 @@ const colors = {
   },
   layout: {
     general: {
-      bodyBg: '#F8F8F8'
+      bodyBg: themeColors.secondary
     },
     sidebar: {
-      background: themeColors.white,
+      background: '#0c3c44',
       textColor: themeColors.secondary,
       dividerBg: '#f2f5f9',
       menuItemColor: '#242E6F',
@@ -246,9 +246,10 @@ export const GreyGooseTheme = createTheme({
   },
   header: {
     height: '80px',
-    background: colors.alpha.white[100],
+    background: colors.alpha.black[100],
     boxShadow: colors.shadows.cardSm,
-    textColor: colors.secondary.main
+    textColor: '#0D3B45'
+
   },
   spacing: 9,
   palette: {
@@ -292,9 +293,9 @@ export const GreyGooseTheme = createTheme({
       contrastText: colors.alpha.white[100]
     },
     text: {
-      primary: colors.alpha.black[100],
-      secondary: colors.alpha.black[70],
-      disabled: colors.alpha.black[50]
+      primary: colors.alpha.white[100],
+      secondary: colors.alpha.white[70],
+      disabled: colors.alpha.white[50]
     },
     background: {
       paper: colors.alpha.white[100],
@@ -487,7 +488,8 @@ export const GreyGooseTheme = createTheme({
           marginBottom: -5
         },
         title: {
-          fontSize: 15
+          fontSize: 15,
+          
         }
       }
     },
@@ -535,7 +537,7 @@ export const GreyGooseTheme = createTheme({
       styleOverrides: {
         root: {
           fontSize: 14,
-          fontWeight: 'bold'
+          fontWeight: 'bold',
         },
         colorDefault: {
           background: colors.alpha.black[30],
@@ -608,7 +610,7 @@ export const GreyGooseTheme = createTheme({
         },
         containedSecondary: {
           backgroundColor: colors.secondary.main,
-          color: colors.alpha.white[100],
+          color: colors.alpha.black[100],
           border: '1px solid ' + colors.alpha.black[30]
         },
         outlinedSecondary: {
@@ -657,11 +659,11 @@ export const GreyGooseTheme = createTheme({
       styleOverrides: {
         root: {
           color: colors.primary.main,
-          background: colors.alpha.white[100],
+          background: colors.alpha.black[100],
           transition: 'all .2s',
 
           '&:hover, &.Mui-selected, &.Mui-selected:hover': {
-            color: colors.alpha.white[100],
+            color: colors.alpha.black[100],
             background: colors.primary.main
           }
         }
@@ -735,7 +737,9 @@ export const GreyGooseTheme = createTheme({
     MuiPaper: {
       styleOverrides: {
         root: {
-          padding: 0
+          padding: 0,
+          background: '#0D3B45',
+          textColor: colors.alpha.white[100]
         },
         elevation0: {
           boxShadow: 'none'
@@ -775,8 +779,8 @@ export const GreyGooseTheme = createTheme({
           },
           '& .MuiSlider-valueLabel': {
             borderRadius: 6,
-            background: colors.alpha.black[100],
-            color: colors.alpha.white[100]
+            background: colors.alpha.white[100],
+            color: colors.alpha.black[100]
           }
         }
       }
@@ -896,7 +900,7 @@ export const GreyGooseTheme = createTheme({
           transition: 'all .2s',
 
           '&:hover, &:active, &.active, &.Mui-selected': {
-            color: colors.alpha.black[100],
+            color: colors.alpha.white[100],
             background: alpha(colors.primary.lighter, 0.4)
           },
           '&.Mui-selected:hover': {
@@ -1205,16 +1209,16 @@ export const GreyGooseTheme = createTheme({
     caption: {
       fontSize: 13,
       textTransform: 'uppercase',
-      color: colors.alpha.black[50]
+      color: colors.alpha.white[50]
     },
     subtitle1: {
       fontSize: 14,
-      color: colors.alpha.black[70]
+      color: colors.alpha.white[70]
     },
     subtitle2: {
       fontWeight: 400,
       fontSize: 15,
-      color: colors.alpha.black[70]
+      color: colors.alpha.white[70]
     },
     overline: {
       fontSize: 13,

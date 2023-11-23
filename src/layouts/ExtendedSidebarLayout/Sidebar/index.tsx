@@ -23,7 +23,7 @@ const SidebarWrapper = styled(Box)(
         width: ${theme.sidebar.width};
         min-width: ${theme.sidebar.width};
         color: ${theme.colors.alpha.trueWhite[70]};
-        background: #0c3c44;
+        background: ${theme.sidebar.background};
         position: relative;
         z-index: 7;
         height: 100%;
@@ -47,7 +47,7 @@ function Sidebar() {
           position: 'fixed',
           left: 0,
           top: 0,
-          background:' #0c3c44',
+          
           boxShadow:
             theme.palette.mode === 'dark' ? theme.sidebar.boxShadow : 'none'
         }}

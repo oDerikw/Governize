@@ -4,7 +4,7 @@ import '@mui/lab/themeAugmentation';
 // import i18n from 'src/i18n/i18n';
 
 const themeColors = {
-  primary: '#9b52e1',
+  primary: '#0c3c44',
   secondary: '#000',
   success: '#57CA22',
   warning: '#FFA319',
@@ -54,7 +54,7 @@ const colors = {
       bodyBg: '#fff'
     },
     sidebar: {
-      background: '#fcfbfc',
+      background: '#0c3c44',
       textColor: themeColors.secondary,
       dividerBg: '#f2f5f9',
       menuItemColor: themeColors.black,
@@ -229,7 +229,7 @@ export const PurpleFlowTheme = createTheme({
     borderRadiusXl: '18px'
   },
   sidebar: {
-    background: '#fff',
+    background: '#0c3c44',
     textColor: colors.layout.sidebar.textColor,
     dividerBg: colors.layout.sidebar.dividerBg,
     menuItemColor: colors.layout.sidebar.menuItemColor,
