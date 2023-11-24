@@ -185,9 +185,8 @@ function HeaderMenu() {
           sx={{
             mr: 1,
             px: 2,
-            backgroundColor: `${theme.colors.secondary.lighter}`,
-            color: `${theme.colors.secondary.dark}`,
-
+            backgroundColor: '#B3B3B3',
+            
             '.MuiSvgIcon-root': {
               color: `${theme.colors.secondary.dark}`,
               transition: `${theme.transitions.create(['color'])}`
@@ -217,8 +216,7 @@ function HeaderMenu() {
           size="small"
           sx={{
             px: 2,
-            backgroundColor: `${theme.colors.secondary.lighter}`,
-            color: `${theme.colors.secondary.dark}`,
+            backgroundColor: '#B3B3B3',
 
             '.MuiSvgIcon-root': {
               color: `${theme.colors.secondary.dark}`,
@@ -259,7 +257,7 @@ function HeaderMenu() {
         <Box
           sx={{
             p: 2,
-            background: alpha(theme.colors.alpha.black[100], 0.06)
+            background: theme.colors.primary.lighter
           }}
           display="flex"
           alignItems="center"
@@ -571,7 +569,7 @@ function HeaderMenu() {
         }}
         sx={{
           '.MuiPopover-paper': {
-            background: theme.colors.gradients.blue3
+            background: theme.colors.secondary.light
           }
         }}
       >

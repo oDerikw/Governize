@@ -4,15 +4,15 @@ import '@mui/lab/themeAugmentation';
 // import i18n from 'src/i18n/i18n';
 
 const themeColors = {
-  primary: '#b1f830',
-  secondary: '#0B2930',
+  primary: '#4cca76',
+  secondary: '#2D2D2D',
   success: '#40991A',
   warning: '#FFA319',
   error: '#CD4343',
-  info: '#33C2FF',
-  black: '#061e24',
+  info: '#009067',
+  black: '#262626',
   white: '#ffffff',
-  primaryAlt: '#005749'
+  primaryAlt: '#5C5C5C'
 };
 
 const colors = {
@@ -55,7 +55,7 @@ const colors = {
       bodyBg: themeColors.secondary
     },
     sidebar: {
-      background: '#0c3c44',
+      background: '#404040',
       textColor: themeColors.secondary,
       dividerBg: '#f2f5f9',
       menuItemColor: '#242E6F',
@@ -738,7 +738,7 @@ export const GreyGooseTheme = createTheme({
       styleOverrides: {
         root: {
           padding: 0,
-          background: '#0D3B45',
+          background: '#404040',
           textColor: colors.alpha.white[100]
         },
         elevation0: {

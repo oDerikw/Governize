@@ -12,12 +12,14 @@ import Link from 'src/components/Link';
 const TypographyH1 = styled(Typography)(
   ({ theme }) => `
     font-size: ${theme.typography.pxToRem(50)};
+    color: ${theme.colors.alpha.black[100]};
 `
 );
 
 const TypographyH2 = styled(Typography)(
   ({ theme }) => `
     font-size: ${theme.typography.pxToRem(17)};
+    color: ${theme.colors.alpha.black[100]};
 `
 );
 

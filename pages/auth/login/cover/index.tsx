@@ -16,7 +16,7 @@ import Link from 'src/components/Link';
 import { useRouter } from 'next/router';
 
 import { useTranslation } from 'react-i18next';
-import Logo from 'src/components/Logo';
+import Logo from 'src/components/LogoSign';
 import Scrollbar from 'src/components/Scrollbar';
 
 const icons = {
@@ -31,6 +31,7 @@ const Content = styled(Box)(
     display: flex;
     flex: 1;
     width: 100%;
+    
 `
 );
 
@@ -46,12 +47,12 @@ const MainContent = styled(Box)(
 );
 
 const SidebarWrapper = styled(Box)(
-  ({ theme }) => `
+  () => `
     position: fixed;
     left: 0;
     top: 0;
     height: 100%;
-    background: ${theme.colors.alpha.white[100]};
+    background: #0c3c44;
     width: 440px;
 `
 );
@@ -84,8 +85,11 @@ const CardImg = styled(Card)(
 const TypographyH1 = styled(Typography)(
   ({ theme }) => `
     font-size: ${theme.typography.pxToRem(33)};
+    color: ${theme.colors.alpha.white[100]};
+    
 `
 );
+
 
 function LoginCover() {
   const { method } = useAuth() as any;
@@ -111,11 +115,12 @@ function LoginCover() {
               <Box mt={6}>
                 <TypographyH1
                   variant="h1"
+                  textAlign="center"
                   sx={{
                     mb: 7
                   }}
                 >
-                  {t('Excluir - S/N')}
+                  {t('Governize')}
                 </TypographyH1>
                 <Box
                   sx={{
@@ -178,6 +183,7 @@ function LoginCover() {
                 </Box>
                 <Typography
                   variant="subtitle1"
+                  color="common.white"
                   sx={{
                     my: 3
                   }}
@@ -188,12 +194,12 @@ function LoginCover() {
                 </Typography>
                 <Typography
                   variant="subtitle1"
-                  color="text.primary"
+                  color="common.white"
                   fontWeight="bold"
                 >
                   {t('Lorem Text')}
                 </Typography>
-                <Typography variant="subtitle1">
+                <Typography variant="subtitle1" color="common.white">
                   {t(
                     'Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id'
                   )}

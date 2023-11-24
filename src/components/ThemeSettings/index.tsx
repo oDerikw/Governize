@@ -114,11 +114,11 @@ const ColorSchemeWrapper = styled(Box)(
 
     &.greyGoose {
         .primary {
-            background: #b1f830;
+            background: #4cca76;
         }
     
         .secondary {
-            background: #0B2930;
+            background: #2D2D2D;
         }
     }
     

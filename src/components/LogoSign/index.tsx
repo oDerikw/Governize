@@ -10,12 +10,11 @@ import { useTranslation } from 'react-i18next';
 const LogoWrapper = styled(Link)(
   ({ theme }) => `
         color: ${theme.palette.text.primary};
-        background:  #0c3c44;
         display: flex;
         text-decoration: none;
         overflow:hidden;
         width: 100px;
-        border-radius:20%;
+        border-radius:100%;
         margin: 0 auto;
         font-weight: ${theme.typography.fontWeightBold};
 `
