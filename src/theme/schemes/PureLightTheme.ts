@@ -256,7 +256,7 @@ export const PureLightTheme = createTheme({
       black: colors.alpha.black[100],
       white: colors.alpha.white[100]
     },
-    mode: 'dark',
+    mode: 'light',
     primary: {
       light: colors.primary.light,
       main: colors.primary.main,

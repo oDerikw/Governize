@@ -1,13 +1,9 @@
-import { FC, useContext, useEffect, useRef, MouseEvent, useState } from 'react';
+import { FC, useContext, useEffect, useRef, useState } from 'react';
 import {
   Popover,
   styled,
-  Button,
-  MenuItem,
-  Menu,
   Typography,
   Stack,
-  Divider,
   Box,
   Tooltip
 } from '@mui/material';
@@ -16,8 +12,7 @@ import CheckTwoToneIcon from '@mui/icons-material/CheckTwoTone';
 import SettingsTwoToneIcon from '@mui/icons-material/SettingsTwoTone';
 import Fab from '@mui/material/Fab';
 import { useTranslation } from 'react-i18next';
-import UnfoldMoreTwoToneIcon from '@mui/icons-material/UnfoldMoreTwoTone';
-import Link from 'src/components/Link';
+
 
 const ThemeSettingsButton = styled(Box)(
   ({ theme }) => `
@@ -72,9 +67,7 @@ const ButtonWrapper = styled(Box)(
         &.active {
             box-shadow: 0 0 0 2px ${theme.palette.primary.main};
 
-            .colorSchemeWrapper {
-                opacity: .6;
-            }
+            
         }
   `
 );
@@ -121,21 +114,21 @@ const ColorSchemeWrapper = styled(Box)(
 
     &.greyGoose {
         .primary {
-            background: #2442AF;
+            background: #b1f830;
         }
     
         .secondary {
-            background: #F8F8F8;
+            background: #0B2930;
         }
     }
     
     &.purpleFlow {
         .primary {
-            background: #9b52e1;
+            background: #0c3c44;
         }
     
         .secondary {
-            background: #00b795;
+            background: #f2f5f9;
         }
     }
   `
@@ -194,14 +187,8 @@ const ThemeSettings: FC = () => {
     setThemeName(theme);
   };
 
-  const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
-  const open = Boolean(anchorEl);
-  const openMenu = (event: MouseEvent<HTMLButtonElement>) => {
-    setAnchorEl(event.currentTarget);
-  };
-  const closeMenu = () => {
-    setAnchorEl(null);
-  };
+
+  
 
   return (
     <>
@@ -225,96 +212,7 @@ const ThemeSettings: FC = () => {
             horizontal: 'right'
           }}
         >
-          <Box p={2}>
-            <Typography
-              sx={{
-                mb: 2,
-                textAlign: 'center',
-                fontWeight: 'bold',
-                textTransform: 'uppercase'
-              }}
-              variant="body1"
-            >
-              Layout Blueprints
-            </Typography>
-            <Button
-              fullWidth
-              size="large"
-              variant="outlined"
-              endIcon={<UnfoldMoreTwoToneIcon />}
-              color="primary"
-              aria-haspopup="true"
-              aria-expanded={open ? 'true' : undefined}
-              onClick={openMenu}
-            >
-              Choose layout
-            </Button>
-            <Menu
-              disableScrollLock
-              anchorEl={anchorEl}
-              open={open}
-              onClose={closeMenu}
-              anchorOrigin={{
-                vertical: 'center',
-                horizontal: 'center'
-              }}
-              transformOrigin={{
-                vertical: 'center',
-                horizontal: 'center'
-              }}
-            >
-              <MenuItem
-                sx={{ fontWeight: 'bold' }}
-                component={Link}
-                href="/dashboards/reports"
-              >
-                Extended Sidebar
-              </MenuItem>
-              <MenuItem
-                sx={{ fontWeight: 'bold' }}
-                component={Link}
-                href="/blueprints/accent-header/dashboards/reports"
-              >
-                Accent Header
-              </MenuItem>
-              <MenuItem
-                sx={{ fontWeight: 'bold' }}
-                component={Link}
-                href="/blueprints/accent-sidebar/dashboards/reports"
-              >
-                Accent Sidebar
-              </MenuItem>
-              <MenuItem
-                sx={{ fontWeight: 'bold' }}
-                component={Link}
-                href="/blueprints/boxed-sidebar/dashboards/reports"
-              >
-                Boxed Sidebar
-              </MenuItem>
-              <MenuItem
-                sx={{ fontWeight: 'bold' }}
-                component={Link}
-                href="/blueprints/collapsed-sidebar/dashboards/reports"
-              >
-                Collapsed Sidebar
-              </MenuItem>
-              <MenuItem
-                sx={{ fontWeight: 'bold' }}
-                component={Link}
-                href="/blueprints/bottom-navigation/dashboards/reports"
-              >
-                Bottom Navigation
-              </MenuItem>
-              <MenuItem
-                sx={{ fontWeight: 'bold' }}
-                component={Link}
-                href="/blueprints/top-navigation/dashboards/reports"
-              >
-                Top Navigation
-              </MenuItem>
-            </Menu>
-          </Box>
-          <Divider />
+          
           <ThemeToggleWrapper>
             <Typography
               sx={{
@@ -347,7 +245,7 @@ const ThemeSettings: FC = () => {
                   </ColorSchemeWrapper>
                 </ButtonWrapper>
               </Tooltip>
-              <Tooltip placement="left" title="Grey Goose" arrow>
+              <Tooltip placement="left" title="Modo escuro" arrow>
                 <ButtonWrapper
                   className={theme === 'GreyGooseTheme' ? 'active' : ''}
                   onClick={() => {
@@ -365,7 +263,7 @@ const ThemeSettings: FC = () => {
                   </ColorSchemeWrapper>
                 </ButtonWrapper>
               </Tooltip>
-              <Tooltip placement="left" title="Purple Flow" arrow>
+              <Tooltip placement="left" title="Padrão" arrow>
                 <ButtonWrapper
                   className={theme === 'PurpleFlowTheme' ? 'active' : ''}
                   onClick={() => {

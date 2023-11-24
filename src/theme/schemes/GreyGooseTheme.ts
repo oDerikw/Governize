@@ -44,11 +44,11 @@ const colors = {
       '0px 1px 4px rgba(28, 52, 140, 0.25), 0px 3px 12px 2px rgba(28, 52, 140, 0.35)',
     warning:
       '0px 1px 4px rgba(255, 163, 25, 0.25), 0px 3px 12px 2px rgba(255, 163, 25, 0.35)',
-    card: '0px 9px 16px rgba(65, 65, 66 .18), 0px 2px 2px rgba(65, 65, 66, 0.32)',
+    card: '0px 9px 16px rgba(0, 0, 0, .18), 0px 2px 2px rgba(0, 0, 0, 0.32)',
     cardSm:
-      '0px 2px 3px rgba(159, 162, 191, .18), 0px 1px 1px rgba(159, 162, 191, 0.32)',
+      '0px 2px 3px rgba(0, 0, 0, .18), 0px 1px 1px rgba(0, 0, 0, 0.32)',
     cardLg:
-      '0 5rem 14rem 0 rgb(255 255 255 / 30%), 0 0.8rem 2.3rem rgb(0 0 0 / 60%), 0 0.2rem 0.3rem rgb(0 0 0 / 45%)'
+      '0 5rem 14rem 0 rgb(0 0 0 / 30%), 0 0.8rem 2.3rem rgb(0 0 0 / 60%), 0 0.2rem 0.3rem rgb(0 0 0 / 45%)' 
   },
   layout: {
     general: {
@@ -241,14 +241,14 @@ export const GreyGooseTheme = createTheme({
     menuItemIconColorActive: colors.layout.sidebar.menuItemIconColorActive,
     menuItemHeadingColor: colors.layout.sidebar.menuItemHeadingColor,
     boxShadow:
-      '2px 0 3px rgba(159, 162, 191, .18), 1px 0 1px rgba(159, 162, 191, 0.32)',
+      '2px 0 3px rgba(0, 0, 0, .18), 1px 0 1px rgba(0, 0, 0, 0.32)',
     width: '290px'
   },
   header: {
     height: '80px',
     background: colors.alpha.black[100],
     boxShadow: colors.shadows.cardSm,
-    textColor: '#0D3B45'
+    textColor: colors.alpha.white[100],
 
   },
   spacing: 9,
@@ -257,7 +257,7 @@ export const GreyGooseTheme = createTheme({
       black: colors.alpha.black[100],
       white: colors.alpha.white[100]
     },
-    mode: 'light',
+    mode: 'dark',
     primary: {
       light: colors.primary.light,
       main: colors.primary.main,
@@ -1174,37 +1174,45 @@ export const GreyGooseTheme = createTheme({
       '"Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji"',
     h1: {
       fontWeight: 700,
-      fontSize: 35
+      fontSize: 35,
+      color: colors.alpha.white[100]
     },
     h2: {
       fontWeight: 700,
-      fontSize: 30
+      fontSize: 30,
+      color: colors.alpha.white[100]
     },
     h3: {
       fontWeight: 700,
       fontSize: 25,
       lineHeight: 1.4,
-      color: colors.alpha.black[100]
+      color: colors.alpha.white[100]
     },
     h4: {
       fontWeight: 700,
-      fontSize: 16
+      fontSize: 16,
+      color: colors.alpha.white[100]
     },
     h5: {
       fontWeight: 700,
-      fontSize: 14
+      fontSize: 14,
+      color: colors.alpha.white[100]
     },
     h6: {
-      fontSize: 15
+      fontSize: 15,
+      color: colors.alpha.white[100]
     },
     body1: {
-      fontSize: 14
+      fontSize: 14,
+      color: colors.alpha.white[100]
     },
     body2: {
-      fontSize: 14
+      fontSize: 14,
+      color: colors.alpha.white[100]
     },
     button: {
-      fontWeight: 600
+      fontWeight: 600,
+      color: colors.alpha.white[100]
     },
     caption: {
       fontSize: 13,
@@ -1223,7 +1231,8 @@ export const GreyGooseTheme = createTheme({
     overline: {
       fontSize: 13,
       fontWeight: 700,
-      textTransform: 'uppercase'
+      textTransform: 'uppercase',
+      color: colors.alpha.white[100]
     }
   },
   shadows: [
