@@ -115,7 +115,7 @@ function LoginCover() {
                     mb: 7
                   }}
                 >
-                  {t('Excluir - S/N')}
+                  {t('Governize')}
                 </TypographyH1>
                 <Box
                   sx={{

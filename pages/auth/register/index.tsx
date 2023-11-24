@@ -126,16 +126,14 @@ function RegisterWizard() {
                     .required(t('O espaço de e-mail é obrigatório')),
                   first_name: Yup.string()
                     .max(255, 'Limite máximo de caracteres atingido')
-                    .matches(/^[a-z0-9]+$/i, "Nome não pode conter caracteres especiais")
                     .required(t('O espaço do primeiro nome é obrigatório')),
                   last_name: Yup.string()
                     .max(255, 'Limite máximo de caracteres atingido')
-                    .matches(/^[a-z0-9]+$/i, "Nome não pode conter caracteres especiais")
                     .required(t('O espaço do último nome é obrigatório')),
                   password: Yup.string()
                     .min(8, 'Senha deve ter mais de 8 caracteres')
                     .max(255, 'Senha muito longa')
-                    .matches(/^[a-z0-9]+$/i, "Senha não pode conter caracteres especiais")
+                    //.matches(/^[a-z0-9]+$/i, "Senha não pode conter caracteres especiais")
                     .required(t('O espaço da senha é obrigatório')),
                   password_confirm: Yup.string()
                     .oneOf(

@@ -213,7 +213,7 @@ function RecoverPasswordBasic() {
             </Typography>{' '}
             <Link
               href={
-                demo ? `/auth/login/cover?demo=${demo}` : '/auth/login/cover'
+                demo ? `/auth/login?demo=${demo}` : '/auth/login'
               }
             >
               <b>Clique aqui</b>
@@ -258,7 +258,7 @@ function RecoverPasswordBasic() {
               severity="info"
             >
               {t(
-                'The password reset instructions have been sent to your email'
+                'As instruções de redefinição de senha foram enviadas para seu e-mail'
               )}
             </Alert>
           </Collapse>
@@ -271,7 +271,7 @@ function RecoverPasswordBasic() {
             }}
             variant="h3"
           >
-            {t('Check your email for further instructions')}
+            {t('Verifique seu e-mail para obter mais instruções')}
           </Typography>
 
           <Button
@@ -280,9 +280,9 @@ function RecoverPasswordBasic() {
             size="large"
             variant="contained"
             onClick={handleCloseDialog}
-            href={demo ? `/auth/login/basic?demo=${demo}` : '/auth/login/basic'}
+            href={demo ? `/auth/login?demo=${demo}` : '/auth/login'}
           >
-            {t('Continue to login')}
+            {t('Clique aqui para fazer login')}
           </Button>
         </Box>
       </DialogWrapper>
