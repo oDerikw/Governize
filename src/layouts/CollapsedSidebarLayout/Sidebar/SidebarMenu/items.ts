@@ -152,23 +152,23 @@ const menuItems: MenuItems[] = [
         items: [
           {
             name: 'Login Basic',
-            link: '/auth/login/basic?demo=true'
+            link: '/auth/login/?demo=true'
           },
           {
             name: 'Login Cover',
-            link: '/auth/login/cover?demo=true'
+            link: '/auth/login/?demo=true'
           },
           {
             name: 'Register Basic',
-            link: '/auth/register/basic?demo=true'
+            link: '/auth/register/?demo=true'
           },
           {
             name: 'Register Cover',
-            link: '/auth/register/cover?demo=true'
+            link: '/auth/register/?demo=true'
           },
           {
             name: 'Register Wizard',
-            link: '/auth/register/wizard?demo=true'
+            link: '/auth/register/?demo=true'
           },
           {
             name: 'Recover Password',

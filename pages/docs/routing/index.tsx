@@ -235,11 +235,11 @@ function Routing() {
               items: [
                 {
                   name: 'Basic',
-                  link: '/auth/login/basic?demo=true'
+                  link: '/auth/login/?demo=true'
                 },
                 {
                   name: 'Cover',
-                  link: '/auth/login/cover?demo=true'
+                  link: '/auth/login/?demo=true'
                 }
               ]
             },
@@ -248,15 +248,15 @@ function Routing() {
               items: [
                 {
                   name: 'Basic',
-                  link: '/auth/register/basic?demo=true'
+                  link: '/auth/register/?demo=true'
                 },
                 {
                   name: 'Cover',
-                  link: '/auth/register/cover?demo=true'
+                  link: '/auth/register/?demo=true'
                 },
                 {
                   name: 'Wizard',
-                  link: '/auth/register/wizard?demo=true'
+                  link: '/auth/register/?demo=true'
                 }
               ]
             },

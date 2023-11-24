@@ -160,11 +160,11 @@ const menuItems: MenuItems[] = [
             items: [
               {
                 name: 'Basic',
-                link: '/auth/login/basic?demo=true'
+                link: '/auth/login/?demo=true'
               },
               {
                 name: 'Cover',
-                link: '/auth/login/cover?demo=true'
+                link: '/auth/login/?demo=true'
               }
             ]
           },
